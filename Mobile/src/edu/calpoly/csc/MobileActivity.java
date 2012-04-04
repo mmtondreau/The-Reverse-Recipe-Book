@@ -1,9 +1,10 @@
 package edu.calpoly.csc;
 
-import android.app.Activity;
+import com.actionbarsherlock.app.SherlockActivity;
+
 import android.os.Bundle;
 
-public class MobileActivity extends Activity {
+public class MobileActivity extends SherlockActivity {
     /** Called when the activity is first created. */
     @Override
     public void onCreate(Bundle savedInstanceState) {
