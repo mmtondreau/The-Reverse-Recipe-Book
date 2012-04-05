@@ -25,12 +25,15 @@ public class ReverseRecipeCookbookActivity extends SherlockFragmentActivity
       // Notice that setContentView() is not used, because we use the root
       // android.R.id.content as the container for each fragment
 
+      ActionBar actionBar;
+      Tab tab;
+
       // setup action bar for tabs
-      ActionBar actionBar = getSupportActionBar();
+      actionBar = getSupportActionBar();
       actionBar.setTitle(getString(R.string.name_app));
       actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-      Tab tab = actionBar
+      tab = actionBar
             .newTab()
             .setText(R.string.name_recipe_search)
             .setTabListener(
