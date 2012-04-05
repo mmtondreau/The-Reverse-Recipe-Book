@@ -4,7 +4,6 @@ import com.actionbarsherlock.app.SherlockFragment;
 import com.reverserecipebook.R;
 
 import android.os.Bundle;
-import android.widget.TextView;
 
 public class FavoritesFragment extends SherlockFragment {
    /** Called when the activity is first created. */
