@@ -4,10 +4,11 @@ import com.actionbarsherlock.app.SherlockFragment;
 
 import android.os.Bundle;
 
-public class MyPantryFragment extends SherlockFragment {
-   /** Called when the activity is first created. */
+public class MyPantryFragment extends SherlockFragment
+{
    @Override
-   public void onCreate(Bundle savedInstanceState) {
+   public void onCreate(Bundle savedInstanceState)
+   {
       super.onCreate(savedInstanceState);
    }
 }

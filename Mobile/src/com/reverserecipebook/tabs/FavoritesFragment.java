@@ -5,10 +5,11 @@ import com.reverserecipebook.R;
 
 import android.os.Bundle;
 
-public class FavoritesFragment extends SherlockFragment {
-   /** Called when the activity is first created. */
+public class FavoritesFragment extends SherlockFragment
+{
    @Override
-   public void onCreate(Bundle savedInstanceState) {
+   public void onCreate(Bundle savedInstanceState)
+   {
       super.onCreate(savedInstanceState);
    }
 }

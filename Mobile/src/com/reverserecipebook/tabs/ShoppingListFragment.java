@@ -8,7 +8,6 @@ import android.widget.TextView;
 
 public class ShoppingListFragment extends SherlockFragment
 {
-   /** Called when the activity is first created. */
    @Override
    public void onCreate(Bundle savedInstanceState)
    {

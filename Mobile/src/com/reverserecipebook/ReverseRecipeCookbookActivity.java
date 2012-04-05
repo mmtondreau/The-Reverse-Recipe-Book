@@ -30,7 +30,7 @@ public class ReverseRecipeCookbookActivity extends SherlockFragmentActivity
 
       // setup action bar for tabs
       actionBar = getSupportActionBar();
-      actionBar.setTitle(getString(R.string.name_app));
+      //actionBar.setTitle(getString(R.string.name_app));
       actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
       tab = actionBar
