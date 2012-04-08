@@ -1,19 +1,19 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
 
     <item
-        android:id="@+id/optionsmenu_recipesearch_add"
+        android:id="@+id/optionsmenu_mypantry_add"
         android:showAsAction="always|withText"
         android:title="Add"/>
     <item
-        android:id="@+id/optionsmenu_recipesearch_options"
+        android:id="@+id/optionsmenu_mypantry_sort"
         android:showAsAction="always|withText"
-        android:title="Options"/>
+        android:title="Sort"/>
     <item
-        android:id="@+id/optionsmenu_recipesearch_clear"
+        android:id="@+id/optionsmenu_mypantry_clear"
         android:showAsAction="always|withText"
         android:title="Clear"/>
     <item
-        android:id="@+id/optionsmenu_recipesearch_go"
+        android:id="@+id/optionsmenu_mypantryh_go"
         android:showAsAction="always|withText"
         android:title="Go"/>
 

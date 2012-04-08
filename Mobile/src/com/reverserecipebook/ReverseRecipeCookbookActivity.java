@@ -82,7 +82,7 @@ public class ReverseRecipeCookbookActivity extends SherlockFragmentActivity
       outState.putInt(KEY_CURTAB, getSupportActionBar().getSelectedNavigationIndex());
    }
 
-   public static class TabListener<T extends SherlockFragment> implements ActionBar.TabListener
+   public static class TabListener<T extends Fragment> implements ActionBar.TabListener
    {
       private final FragmentActivity mActivity;
       private final String mTag;
@@ -99,16 +99,6 @@ public class ReverseRecipeCookbookActivity extends SherlockFragmentActivity
          mTag = tag;
          mClass = clz;
          mArgs = args;
-
-         // Check to see if we already have a fragment for this tab, probably
-         // from a previously saved state. If so, deactivate it, because our
-         // initial state is that a tab isn't shown.
-         mFragment = mActivity.getSupportFragmentManager().findFragmentByTag(tag);
-         if (mFragment != null && !mFragment.isDetached()) {
-            FragmentTransaction ft = mActivity.getSupportFragmentManager().beginTransaction();
-            ft.detach(mFragment);
-            ft.commit();
-         }
       }
 
       public void onTabSelected(Tab tab, FragmentTransaction ft)

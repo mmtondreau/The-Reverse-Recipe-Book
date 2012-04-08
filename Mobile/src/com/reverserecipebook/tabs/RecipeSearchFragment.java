@@ -5,11 +5,14 @@ import android.app.Dialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockDialogFragment;
-import com.actionbarsherlock.app.SherlockFragment;
 import com.actionbarsherlock.app.SherlockFragmentActivity;
+import com.actionbarsherlock.app.SherlockListFragment;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
@@ -18,13 +21,13 @@ import com.reverserecipebook.BrowseActivity;
 import com.reverserecipebook.R;
 import com.reverserecipebook.ReverseRecipeCookbookActivity;
 
-public class RecipeSearchFragment extends SherlockFragment
+public class RecipeSearchFragment extends SherlockListFragment
 {
    private static final CharSequence[] ADD_METHODS = { "Browse", "From My Pantry", "Scan Barcode" };
    private static final int BROWSE = 0;
    private static final int MYPANTRY = 1;
    private static final int SCAN = 2;
-   
+
    @Override
    public void onCreate(Bundle savedInstanceState)
    {
@@ -37,10 +40,15 @@ public class RecipeSearchFragment extends SherlockFragment
    @Override
    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater)
    {
-      // TODO Auto-generated method stub
       super.onCreateOptionsMenu(menu, inflater);
 
       inflater.inflate(R.menu.optionsmenu_recipesearch, menu);
+   }
+
+   @Override
+   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
+   {
+      return inflater.inflate(R.layout.itemlist_recipe, container, false);
    }
 
    @Override
@@ -48,7 +56,7 @@ public class RecipeSearchFragment extends SherlockFragment
    {
       switch (item.getItemId()) {
          case R.id.optionsmenu_recipesearch_add:
-            Toast.makeText(getSherlockActivity(), "Add", Toast.LENGTH_SHORT);
+            // Toast.makeText(getSherlockActivity(), "Add", Toast.LENGTH_SHORT);
             SherlockDialogFragment frag = AddDialogFragment.newInstance();
             frag.show(getFragmentManager(), "add");
             break;
@@ -86,7 +94,7 @@ public class RecipeSearchFragment extends SherlockFragment
       public Dialog onCreateDialog(Bundle savedInstanceState)
       {
          return new AlertDialog.Builder(getActivity())
-               //.setIcon(R.drawable.alert_dialog_icon)
+         // .setIcon(R.drawable.alert_dialog_icon)
                .setTitle("Add an Item").setItems(ADD_METHODS, new DialogInterface.OnClickListener()
                {
                   @Override
@@ -94,12 +102,13 @@ public class RecipeSearchFragment extends SherlockFragment
                   {
                      switch (which) {
                         case BROWSE:
-                           Intent i = new Intent(getActivity(), BrowseActivity.class);
-                           startActivity(i);
+                           startActivityForResult(new Intent(getActivity(), BrowseActivity.class),
+                                 1); // TODO mwrosen: dont use 1
                            break;
                         case MYPANTRY:
                            ((SherlockFragmentActivity) getActivity()).getSupportActionBar()
-                                 .setSelectedNavigationItem(ReverseRecipeCookbookActivity.IDX_MY_PANTRY);
+                                 .setSelectedNavigationItem(
+                                       ReverseRecipeCookbookActivity.IDX_MY_PANTRY);
                            break;
                         case SCAN:
                            break;

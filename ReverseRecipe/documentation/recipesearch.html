@@ -1,0 +1,56 @@
+<html>
+<head>
+</head>
+<body>
+
+===================================================================================================
+The main window for inputting food items to perform a reverse-recipe lookup. It is simply a list
+of ingredients input. 
+
+TODO: Behavior for long-pressing an item ("Add to My Pantry", among others)
+
+The options menu consists of four buttons:
+1. Add
+2. Options
+3. Clear
+4. Go
+===================================================================================================
+Option: Add
+
+This will prompt the user with a context menu with three choices:
+a) Browse (see browse.html)
+b) From My Pantry
+c) Barcode Scan (see barcode.html)
+
+The "From My Pantry" option simply switches the active tab to the My Pantry tab. From here, the
+user may mark any items for inclusion into the current search by tapping them once.
+===================================================================================================
+Option: Options
+
+This will launch a preferences page with the following options:
+
+1. Match: "Any" or "All"
+"Any" means the user wants to make a recipe featuring at least one input ingredient. "All" means
+the user wants to make a recipe that includes every input ingredient. 
+
+These two qualifiers only affect the ingredients input into the in-line reverse recipe search, and 
+do not affect ingredients in "My Pantry" that have been implicitly added to the current search. 
+Note that if "Any" is selected then it is impossible for the returned list of recipes to become 
+smaller as more ingredients are added.
+
+2. Match: "Recipes I Can Make" or "Recipes I Can't Make" 
+Essentially, this is a way for the user to either browse recipes he can make right now, or recipes 
+that he needs to go shopping for. These two qualifiers include items that are implicitly included 
+by "My Pantry". 
+===================================================================================================
+Option: Clear
+
+This will clear the current search. 
+===================================================================================================
+Option: Go
+
+This will perform the search and launch the reverse-recipe results activity.
+===================================================================================================
+
+</body>
+</html>

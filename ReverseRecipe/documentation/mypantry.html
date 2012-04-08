@@ -1,0 +1,59 @@
+<html>
+<body>
+
+===================================================================================================
+A list of all items the user has input to My Pantry. Each item will display its full name and
+expiration date (will there be room?). On each list item there will be two buttons: an X, which
+deletes the item from My Pantry (with confirm dialog), and a checkbox or other binary visual object
+that indicates if the item has been explicitly added to the current recipe search. Note that even
+items *not* added explicitly via THIS tab should still appear to have been (i.e. the user has
+Carrots in his/her My Pantry, but elects to add Carrots to the current recipe search via Browse.
+Then upon switching to My Pantry, the user will see Carrots highlighted, checked, or whatever).
+
+TODO: Behavior for long-pressing an item.
+
+The options menu consists of four buttons:
+
+1. Add
+2. Sort
+3. Clear
+4. Go
+
+Probably, we will want an Options button as well (which would consume Sort).
+===================================================================================================
+Option: Add
+
+This will prompt the user with a context menu with two choices:
+a) Browse (see browse.html)
+b) Barcode Scan (see barcode.html)
+
+The "From My Pantry" option simply switches the active tab to the My Pantry tab. From here, the
+user may mark any items for inclusion into the current search by tapping them once.
+===================================================================================================
+Option: Sort
+
+This will either launch a context menu with sorting options, or simply cycle through them without
+giving the user a choice. The latter is simpler, but more confusing to the user, and a large 
+My Pantry will probably lag. If so, context menu it is.
+
+The ingredients in My Pantry may be sorted alphabetically or by expiration date, and maybe also
+by whether or not they are included in the current recipe search or not.
+===================================================================================================
+Option: Clear
+
+If any My Pantry items have been explicitly added to the current search, this button will clear
+them. Otherwise, it will delete the entire pantry (with confirm dialog).
+
+(Is the first behavior necessary? Would the user ever want to clear all My Pantry items added to
+the current search? Why?)
+===================================================================================================
+Option: Go
+
+This will perform the search and launch the reverse-recipe results activity. It exists in this
+activity as well as the Recipe Search activity because it is highly likely that the user would like
+to construct a recipe using only ingredients from My Pantry and not have to Browse for or Scan any
+new items.
+===================================================================================================
+
+</body>
+</html>
