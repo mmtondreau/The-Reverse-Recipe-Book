@@ -3,27 +3,27 @@ package com.reverserecipebook.tabs;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.actionbarsherlock.app.SherlockDialogFragment;
 import com.actionbarsherlock.app.SherlockFragment;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.view.Menu;
 import com.actionbarsherlock.view.MenuInflater;
 import com.actionbarsherlock.view.MenuItem;
 
+import com.reverserecipebook.BrowseActivity;
 import com.reverserecipebook.R;
+import com.reverserecipebook.ReverseRecipeCookbookActivity;
 
 public class RecipeSearchFragment extends SherlockFragment
 {
-   private static final CharSequence[] ADD_METHODS = { "Browse", "Search", "From My Pantry", "Scan" };
+   private static final CharSequence[] ADD_METHODS = { "Browse", "From My Pantry", "Scan Barcode" };
    private static final int BROWSE = 0;
-   private static final int SEARCH = 1;
-   private static final int MYPANTRY = 2;
-   private static final int SCAN = 3;
+   private static final int MYPANTRY = 1;
+   private static final int SCAN = 2;
    
    @Override
    public void onCreate(Bundle savedInstanceState)
@@ -94,10 +94,12 @@ public class RecipeSearchFragment extends SherlockFragment
                   {
                      switch (which) {
                         case BROWSE:
-                           break;
-                        case SEARCH:
+                           Intent i = new Intent(getActivity(), BrowseActivity.class);
+                           startActivity(i);
                            break;
                         case MYPANTRY:
+                           ((SherlockFragmentActivity) getActivity()).getSupportActionBar()
+                                 .setSelectedNavigationItem(ReverseRecipeCookbookActivity.IDX_MY_PANTRY);
                            break;
                         case SCAN:
                            break;

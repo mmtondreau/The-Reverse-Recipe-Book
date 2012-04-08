@@ -13,13 +13,17 @@
         android:label="@string/name_app"
         android:theme="@style/Theme.Sherlock" >
         <activity
-            android:name="com.reverserecipebook.ReverseRecipeCookbookActivity" 
+            android:name="com.reverserecipebook.ReverseRecipeCookbookActivity"
             android:uiOptions="splitActionBarWhenNarrow" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.reverserecipebook.BrowseActivity"
+            android:uiOptions="splitActionBarWhenNarrow" >
         </activity>
     </application>
 

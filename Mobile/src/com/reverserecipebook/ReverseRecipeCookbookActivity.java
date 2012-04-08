@@ -17,6 +17,11 @@ import com.actionbarsherlock.app.SherlockFragmentActivity;
 public class ReverseRecipeCookbookActivity extends SherlockFragmentActivity
 {
    private static final String KEY_CURTAB = "tab";
+   
+   public static final int IDX_RECIPE_SEARCH = 0;
+   public static final int IDX_MY_PANTRY = 1;
+   public static final int IDX_FAVORITES = 2;
+   public static final int IDX_SHOPPING_LIST = 3;
 
    @Override
    protected void onCreate(Bundle savedInstanceState)

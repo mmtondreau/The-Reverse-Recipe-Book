@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<string name="name_app">Reverse Recipe Cookbook</string>
-    
-	<!-- Activity names -->
-    <string name="name_recipe_search">Recipe Search</string>
-    <string name="name_my_pantry">My Pantry</string>
+
+    <string name="name_app">Reverse Recipe Cookbook</string>
+
+    <!-- Activity names -->
+    <string name="name_browse">Browse</string>
     <string name="name_favorites">Favorites</string>
+    <string name="name_my_pantry">My Pantry</string>
+    <string name="name_recipe_search">Recipe Search</string>
     <string name="name_shopping_list">Shopping List</string>
-        
+
 </resources>
