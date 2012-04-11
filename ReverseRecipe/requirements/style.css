@@ -1,0 +1,16 @@
+.footer {
+	border: 1px solid black;
+	border-collapse:collapse;
+	text-align: center;
+    margin-left: 15%; 
+    margin-right: 15%;
+    width: 70%;
+}
+.footer td {
+}
+.footer th {
+}
+
+a {
+	text-decoration:none;
+}
